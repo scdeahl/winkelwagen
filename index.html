@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fullscreen Video Website</title>
+    <style>
+      @font-face {
+        font-family: "Eating Pasta";
+        src: url("Eating Pasta.otf") format("opentype");
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Eating Pasta", sans-serif;
+        color: #fff;
+      }
+
+      /* Fullscreen video */
+      .video-container {
+        position: relative;
+        height: 100vh;
+        overflow: hidden;
+      }
+
+      .video-container video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        min-width: 100%;
+        min-height: 100%;
+        object-fit: cover;
+      }
+
+      /* Bottom banner */
+      .banner {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        background-color: #000; /* Black background */
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 20px;
+      }
+
+      .banner .logo {
+        display: flex;
+        align-items: center;
+      }
+
+      .banner .logo img {
+        height: 50px;
+      }
+
+      .banner .tabs {
+        display: flex;
+        justify-content: space-evenly; /* Distribute tabs evenly */
+        width: 70%; /* Adjust spacing of tabs */
+      }
+
+      .banner .tabs a {
+        text-decoration: none;
+        color: #fff; /* White text */
+        font-size: 24px; /* Larger font size */
+        font-weight: bold;
+        transition: color 0.3s;
+      }
+
+      .banner .tabs a:hover {
+        color: #f0a500; /* Highlight color on hover */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Video Background -->
+    <div class="video-container">
+      <video autoplay muted loop id="background-video">
+        <!-- Add your video file here -->
+        <source src="your-video.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <!-- Bottom Banner -->
+    <div class="banner">
+      <div class="logo">
+        <img src="logo.png" alt="Logo" />
+      </div>
+      <div class="tabs">
+        <a href="#join">Join</a>
+        <a href="#about-us">About Us</a>
+        <a href="#our-story">Our Story</a>
+      </div>
+    </div>
+  </body>
+</html>
