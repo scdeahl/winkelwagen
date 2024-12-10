@@ -17,8 +17,9 @@
       }
 
       body {
-        font-family: "Eating Pasta", sans-serif;
-        color: #fff;
+        font-family: Calibri, sans-serif;
+        color: #000;
+        background-color: #fff;
       }
 
       /* Fullscreen video */
@@ -43,16 +44,11 @@
         position: absolute;
         bottom: 0;
         width: 100%;
-        background-color: #000; /* Black background */
+        background-color: #000;
         display: flex;
         align-items: center;
         justify-content: space-between;
         padding: 10px 20px;
-      }
-
-      .banner .logo {
-        display: flex;
-        align-items: center;
       }
 
       .banner .logo img {
@@ -61,20 +57,58 @@
 
       .banner .tabs {
         display: flex;
-        justify-content: space-evenly; /* Distribute tabs evenly */
-        width: 70%; /* Adjust spacing of tabs */
+        justify-content: space-evenly;
+        width: 70%;
       }
 
       .banner .tabs a {
         text-decoration: none;
-        color: #fff; /* White text */
-        font-size: 24px; /* Larger font size */
+        color: #fff;
+        font-size: 24px;
         font-weight: bold;
         transition: color 0.3s;
       }
 
       .banner .tabs a:hover {
-        color: #f0a500; /* Highlight color on hover */
+        color: #f0a500;
+      }
+
+      /* Section styling */
+      section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        padding: 20px;
+        background-color: #fff;
+        color: #000;
+      }
+
+      section h1 {
+        font-size: 48px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      section p {
+        font-size: 18px;
+        line-height: 1.6;
+        text-align: center;
+        max-width: 800px;
+      }
+
+      section ul {
+        font-size: 18px;
+        line-height: 1.8;
+        text-align: center;
+        list-style-type: none;
+        padding: 0;
+      }
+
+      section ul li {
+        margin: 10px 0;
       }
     </style>
   </head>
@@ -82,7 +116,6 @@
     <!-- Video Background -->
     <div class="video-container">
       <video autoplay muted loop id="background-video">
-        <!-- Add your video file here -->
         <source src="your-video.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
@@ -99,5 +132,30 @@
         <a href="#our-story">Our Story</a>
       </div>
     </div>
+
+    <!-- Sections -->
+    <section id="join">
+      <h1>Join</h1>
+      <p>Here are options to join us:</p>
+      <ul>
+        <li>Sign up for our newsletter</li>
+        <li>Follow us on social media</li>
+        <li>Become a member for exclusive benefits</li>
+      </ul>
+    </section>
+
+    <section id="about-us">
+      <h1>About Us</h1>
+      <p>Meet the team: Nils, Rembrandt, Sophie, and Nathalie.</p>
+    </section>
+
+    <section id="our-story">
+      <h1>Our Story</h1>
+      <p>
+        This is our story. We started with a simple idea and grew into a
+        community-driven initiative. Join us as we continue to grow and make a
+        difference together!
+      </p>
+    </section>
   </body>
 </html>
