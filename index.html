@@ -29,14 +29,14 @@
         overflow: hidden;
       }
 
-      .video-container video {
+      .video-container iframe {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        min-width: 100%;
-        min-height: 100%;
-        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        border: none;
       }
 
       /* Bottom banner */
@@ -114,12 +114,13 @@
     </style>
   </head>
   <body>
-    <!-- Video Background -->
+    <!-- YouTube Video Background -->
     <div class="video-container">
-      <video autoplay muted loop id="background-video">
-        <source src="First film.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+      <iframe
+        src="https://www.youtube.com/embed/x7Gy9wnxxGA?autoplay=1&mute=1&loop=1&playlist=x7Gy9wnxxGA"
+        allow="autoplay; encrypted-media"
+        allowfullscreen
+      ></iframe>
     </div>
 
     <!-- Bottom Banner -->
