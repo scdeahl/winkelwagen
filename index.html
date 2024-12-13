@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fullscreen Video Website</title>
     <style>
+      @font-face {
+        font-family: "Eating Pasta";
+        src: url("Eating Pasta.otf") format("opentype");
+      }
+
       * {
         margin: 0;
         padding: 0;
@@ -61,6 +66,7 @@
         align-items: center;
         justify-content: space-between;
         padding: 10px 20px;
+        font-family: "Eating Pasta", sans-serif; /* Eating Pasta font applied here */
       }
 
       .banner .logo img {
@@ -78,6 +84,7 @@
         color: #fff;
         font-size: 24px;
         font-weight: bold;
+        font-family: "Eating Pasta", sans-serif; /* Explicitly ensure Eating Pasta font */
         transition: color 0.3s;
       }
 
@@ -127,7 +134,7 @@
     <div class="video-container">
       <iframe
         id="youtube-video"
-        src="https://www.youtube.com/embed/O5UadsRy_eY?mute=1&enablejsapi=1"
+        src="https://www.youtube.com/embed/O5UadsRy_eY?mute=1&enablejsapi=1&rel=0&vq=hd1080&cc_load_policy=0"
         allow="autoplay; encrypted-media"
         allowfullscreen
         playsinline
