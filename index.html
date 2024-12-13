@@ -3,8 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fullscreen YouTube Video</title>
+    <title>Fullscreen Video Website</title>
     <style>
+      @font-face {
+        font-family: "Eating Pasta";
+        src: url("Eating Pasta.otf") format("opentype");
+      }
+
       * {
         margin: 0;
         padding: 0;
@@ -17,20 +22,21 @@
         background-color: #fff;
       }
 
-      /* Fullscreen video container */
+      /* Fullscreen video */
       .video-container {
         position: relative;
         height: 100vh;
         overflow: hidden;
       }
 
-      .video-container iframe {
+      .video-container video {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 100%;
-        height: 100%;
+        min-width: 100%;
+        min-height: 100%;
+        object-fit: cover;
       }
 
       /* Bottom banner */
@@ -60,23 +66,60 @@
         color: #fff;
         font-size: 24px;
         font-weight: bold;
+        font-family: "Eating Pasta", sans-serif; /* Eating Pasta font for tabs */
         transition: color 0.3s;
       }
 
       .banner .tabs a:hover {
         color: #f0a500;
       }
+
+      /* Section styling */
+      section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        padding: 20px;
+        background-color: #fff;
+        color: #000;
+      }
+
+      section h1 {
+        font-size: 48px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        text-align: center;
+        font-family: "Eating Pasta", sans-serif; /* Eating Pasta font for title */
+      }
+
+      section p,
+      section ul {
+        font-size: 18px;
+        font-family: Calibri, sans-serif; /* Calibri font for content */
+        line-height: 1.6;
+        text-align: center;
+        max-width: 800px;
+      }
+
+      section ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      section ul li {
+        margin: 10px 0;
+      }
     </style>
   </head>
   <body>
-    <!-- YouTube Video Background -->
+    <!-- Video Background -->
     <div class="video-container">
-      <iframe
-        src="https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1&mute=1&loop=1&playlist=YOUR_VIDEO_ID"
-        frameborder="0"
-        allow="autoplay; encrypted-media"
-        allowfullscreen
-      ></iframe>
+      <video autoplay muted loop id="background-video">
+        <source src="First film.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
     </div>
 
     <!-- Bottom Banner -->
@@ -90,5 +133,30 @@
         <a href="#our-story">Our Story</a>
       </div>
     </div>
+
+    <!-- Sections -->
+    <section id="join">
+      <h1>Join</h1>
+      <p>Here are options to join us:</p>
+      <ul>
+        <li>Sign up for our newsletter</li>
+        <li>Follow us on social media</li>
+        <li>Become a member for exclusive benefits</li>
+      </ul>
+    </section>
+
+    <section id="about-us">
+      <h1>About Us</h1>
+      <p>Meet the team: Nils, Rembrandt, Sophie, and Nathalie.</p>
+    </section>
+
+    <section id="our-story">
+      <h1>Our Story</h1>
+      <p>
+        This is our story. We started with a simple idea and grew into a
+        community-driven initiative. Join us as we continue to grow and make a
+        difference together!
+      </p>
+    </section>
   </body>
 </html>
