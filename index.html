@@ -35,6 +35,22 @@
         border: none;
       }
 
+      /* Play with Sound Button */
+      #play-sound-button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(0, 0, 0, 0.7);
+        color: white;
+        font-size: 18px;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        z-index: 10;
+      }
+
       /* Bottom banner */
       .banner {
         position: absolute;
@@ -110,12 +126,14 @@
     <!-- YouTube Video Background -->
     <div class="video-container">
       <iframe
-        src="https://www.youtube.com/embed/O5UadsRy_eY?autoplay=1&mute=1&loop=1&playlist=O5UadsRy_eY"
+        id="youtube-video"
+        src="https://www.youtube.com/embed/O5UadsRy_eY?mute=1&enablejsapi=1"
         allow="autoplay; encrypted-media"
         allowfullscreen
         playsinline
         title="YouTube Video Background"
       ></iframe>
+      <button id="play-sound-button">Play with Sound</button>
     </div>
 
     <!-- Bottom Banner -->
@@ -154,5 +172,33 @@
         difference together!
       </p>
     </section>
+
+    <script>
+      const playButton = document.getElementById("play-sound-button");
+      const iframe = document.getElementById("youtube-video");
+
+      playButton.addEventListener("click", () => {
+        // Enable sound by interacting with the YouTube API
+        iframe.contentWindow.postMessage(
+          JSON.stringify({
+            event: "command",
+            func: "unMute",
+            args: [],
+          }),
+          "*"
+        );
+
+        iframe.contentWindow.postMessage(
+          JSON.stringify({
+            event: "command",
+            func: "playVideo",
+            args: [],
+          }),
+          "*"
+        );
+
+        playButton.style.display = "none"; // Hide the button after clicking
+      });
+    </script>
   </body>
 </html>
