@@ -5,11 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fullscreen Video Website</title>
     <style>
-      @font-face {
-        font-family: "Eating Pasta";
-        src: url("Eating Pasta.otf") format("opentype");
-      }
-
       * {
         margin: 0;
         padding: 0;
@@ -20,6 +15,7 @@
         font-family: Calibri, sans-serif;
         color: #000;
         background-color: #fff;
+        overflow: hidden; /* Prevent scrollbars */
       }
 
       /* Fullscreen video */
@@ -28,16 +24,15 @@
         height: 100vh;
         width: 100vw;
         overflow: hidden;
-        background-color: transparent;
       }
 
-      .video-container iframe {
+      .video-container video {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        border: none;
+        object-fit: cover;
       }
 
       /* Bottom banner */
@@ -67,7 +62,6 @@
         color: #fff;
         font-size: 24px;
         font-weight: bold;
-        font-family: "Eating Pasta", sans-serif;
         transition: color 0.3s;
       }
 
@@ -92,13 +86,11 @@
         font-weight: bold;
         margin-bottom: 20px;
         text-align: center;
-        font-family: "Eating Pasta", sans-serif;
       }
 
       section p,
       section ul {
         font-size: 18px;
-        font-family: Calibri, sans-serif;
         line-height: 1.6;
         text-align: center;
         max-width: 800px;
@@ -115,15 +107,12 @@
     </style>
   </head>
   <body>
-    <!-- YouTube Video Background -->
+    <!-- Video Background -->
     <div class="video-container">
-     <iframe
-  src="https://www.youtube.com/embed/x7Gy9wnxxGA?autoplay=1&mute=1"
-  allow="autoplay; encrypted-media"
-  allowfullscreen
-  playsinline
-  title="Homepage Video"
-></iframe>
+      <video autoplay muted loop playsinline>
+        <source src="First film.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
     </div>
 
     <!-- Bottom Banner -->
