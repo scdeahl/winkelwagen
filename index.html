@@ -23,11 +23,38 @@
         overflow: hidden; /* Prevent scrollbars */
       }
 
-      /* Fullscreen video */
-      .video-container {
-        position: relative;
-        height: 100vh;
+      /* Video and Quote Layout */
+      .content-container {
+        display: flex;
+        flex-direction: row;
+        height: calc(
+          100vh - 100px
+        ); /* Adjust height to account for the banner and spacing */
         width: 100vw;
+        margin-top: 30px; /* Space between banner and content */
+      }
+
+      .quote-container {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #fff;
+        color: #000;
+        padding: 20px;
+        font-family: Calibri, sans-serif; /* Simpler font */
+        text-align: center;
+      }
+
+      .quote-container p {
+        font-size: 24px;
+        line-height: 1.6;
+        max-width: 600px;
+      }
+
+      .video-container {
+        flex: 2;
+        position: relative;
         overflow: hidden;
       }
 
@@ -38,6 +65,24 @@
         width: 100%;
         height: 100%;
         border: none;
+      }
+
+      .video-container + .how-it-works {
+        text-align: center;
+        margin-top: 20px;
+        font-family: Calibri, sans-serif;
+        padding: 20px;
+      }
+
+      .how-it-works h1 {
+        font-family: "Eating Pasta", sans-serif;
+        font-size: 32px;
+        margin-bottom: 20px;
+      }
+
+      .how-it-works p {
+        font-size: 18px;
+        line-height: 1.8;
       }
 
       /* Play with Sound Button */
@@ -56,10 +101,10 @@
         z-index: 10;
       }
 
-      /* Bottom banner */
+      /* Top banner */
       .banner {
         position: absolute;
-        bottom: 0;
+        top: 0;
         width: 100%;
         background-color: #000;
         display: flex;
@@ -67,6 +112,7 @@
         justify-content: space-between;
         padding: 10px 20px;
         font-family: "Eating Pasta", sans-serif; /* Eating Pasta font applied here */
+        z-index: 20;
       }
 
       .banner .logo img {
@@ -130,20 +176,7 @@
     </style>
   </head>
   <body>
-    <!-- YouTube Video Background -->
-    <div class="video-container">
-      <iframe
-        id="youtube-video"
-        src="https://www.youtube.com/embed/O5UadsRy_eY?mute=1&enablejsapi=1&rel=0&vq=hd1080&cc_load_policy=0"
-        allow="autoplay; encrypted-media"
-        allowfullscreen
-        playsinline
-        title="YouTube Video Background"
-      ></iframe>
-      <button id="play-sound-button">Play with Sound</button>
-    </div>
-
-    <!-- Bottom Banner -->
+    <!-- Top Banner -->
     <div class="banner">
       <div class="logo">
         <img src="logo.png" alt="Logo" />
@@ -153,6 +186,57 @@
         <a href="#about-us">About Us</a>
         <a href="#our-story">Our Story</a>
       </div>
+    </div>
+
+    <!-- Content Container -->
+    <div class="content-container">
+      <!-- Quote Section -->
+      <div class="quote-container">
+        <p>
+          Discover a better way to shop for essentials like oats, pasta, and
+          detergent, completely packaging-free. Order just the amount you need,
+          and fill your own bags or containers right at your doorstep.
+          Sustainable living has never been this convenient.
+        </p>
+      </div>
+
+      <!-- YouTube Video Section -->
+      <div class="video-container">
+        <iframe
+          id="youtube-video"
+          src="https://www.youtube.com/embed/O5UadsRy_eY?mute=1&enablejsapi=1&rel=0&vq=hd1080&cc_load_policy=0"
+          allow="autoplay; encrypted-media"
+          allowfullscreen
+          playsinline
+          title="YouTube Video Background"
+        ></iframe>
+        <button id="play-sound-button">Play with Sound</button>
+      </div>
+    </div>
+
+    <!-- How it works Section -->
+    <div class="how-it-works">
+      <h1>How it works</h1>
+      <p>
+        <strong>Download the Winkelwagen App</strong><br />
+        Get started by clicking <a href="#">this link</a> or searching for
+        "Winkelwagen" in your app store.<br /><br />
+        <strong>Create Your Account</strong><br />
+        Sign up and choose a membership plan that suits you: Basic, Advanced, or
+        Package-Free Fanatic.<br /><br />
+        <strong>Join the Community</strong><br />
+        Welcome to the Winkelwagen family! You're now part of the movement for
+        sustainable living.<br /><br />
+        <strong>Place Your Order</strong><br />
+        Browse and select the products you need, then set a delivery date that
+        works for you.<br /><br />
+        <strong>Pick Up Your Products</strong><br />
+        On delivery day, meet the van and fill your own containers—or purchase
+        one of our reusable Winkelwagen bags.<br /><br />
+        <strong>Enjoy Sustainability</strong><br />
+        Use and enjoy your package-free products, knowing you're making a
+        difference.
+      </p>
     </div>
 
     <!-- Sections -->
