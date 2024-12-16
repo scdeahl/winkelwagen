@@ -68,32 +68,31 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding: 300px 60px 60px; /* Center the text with extra spacing */
-        height: 120vh; /* Increase height for more focus on text */
+        height: 100vh;
         text-align: center;
+        background-color: #fff;
       }
 
       #homepage .quote-container {
-        padding: 20px;
-        font-family: "Roboto", sans-serif;
-        font-weight: 100;
-      }
-
-      #homepage .quote-container p {
-        font-size: 36px; /* Larger font for emphasis */
-        line-height: 2;
+        margin-top: 60px;
+        padding: 60px 20px;
+        font-family: "Eating Pasta", sans-serif;
+        font-size: 32px;
+        color: #1d4943; /* Green color */
+        line-height: 1.8;
         max-width: 900px;
+        text-align: center;
       }
 
-      #homepage .video-container {
+      /* Video Section */
+      .video-container {
         position: relative;
         width: 100%;
-        padding-top: 56.25%; /* Maintain 16:9 aspect ratio */
-        margin-top: 40px; /* Add space below the text */
+        height: 100vh;
         overflow: hidden;
       }
 
-      #homepage .video-container iframe {
+      .video-container iframe {
         position: absolute;
         top: 0;
         left: 0;
@@ -101,61 +100,43 @@
         height: 100%;
       }
 
-      /* Section styling */
-      section {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 100px 60px; /* Add more space from corners */
-        height: auto;
-      }
-
+      /* How it Works Section */
       #how-it-works {
-        background-color: #fff;
-        color: #000;
-        padding-top: 80px; /* Add more space below the video */
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        justify-content: space-between;
+        background-color: #000;
+        color: #fff;
+        padding: 100px 40px;
+        text-align: center;
       }
 
-      .how-it-works-steps {
-        flex: 2;
+      #how-it-works h1 {
+        font-family: "Eating Pasta", sans-serif;
+        font-size: 48px;
+        margin-bottom: 40px;
+      }
+
+      #how-it-works .steps-list {
         font-size: 20px;
         line-height: 1.8;
+        max-width: 800px;
+        margin: 0 auto;
         text-align: left;
-        max-width: 600px;
-        margin: 0 40px;
       }
 
-      .how-it-works-steps h1 {
-        font-family: "Eating Pasta", sans-serif;
-        font-size: 36px;
-        margin-bottom: 30px;
-      }
-
-      .steps-list {
-        list-style-type: decimal;
-        margin-left: 20px;
+      #how-it-works .steps-list li {
+        margin-bottom: 20px;
       }
 
       .how-it-works-images {
-        flex: 1;
         display: flex;
-        flex-direction: column;
-        align-items: flex-start; /* Align images to the left */
-        justify-content: flex-start;
-        gap: 40px; /* Larger gap between images */
-        margin-top: 20px; /* Adjust alignment with text */
+        justify-content: center;
+        gap: 30px;
+        margin-top: 40px;
       }
 
       .how-it-works-images img {
-        max-width: 350px; /* Make the images larger */
+        max-width: 250px;
         height: auto;
-        opacity: 1;
-        animation: moveUpDown 3s infinite; /* Add subtle movement */
+        animation: moveUpDown 3s infinite ease-in-out;
       }
 
       @keyframes moveUpDown {
@@ -168,36 +149,81 @@
         }
       }
 
+      /* Packaging Problem Section */
       #packaging-problem {
-        background-color: #000;
-        color: #fff;
-        padding-top: 60px;
-      }
-
-      #vision {
         background-color: #1d4943;
         color: #fff;
-        padding-top: 60px;
+        padding: 100px 40px;
+        text-align: center;
       }
 
+      #packaging-problem h1 {
+        font-family: "Eating Pasta", sans-serif;
+        font-size: 48px;
+        margin-bottom: 40px;
+      }
+
+      #packaging-problem p {
+        font-size: 20px;
+        line-height: 1.8;
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: left;
+      }
+
+      /* Vision Section */
+      #vision {
+        background-color: #000;
+        color: #fff;
+        padding: 100px 40px;
+        text-align: center;
+      }
+
+      #vision h1 {
+        font-family: "Eating Pasta", sans-serif;
+        font-size: 48px;
+        margin-bottom: 40px;
+      }
+
+      #vision p {
+        font-size: 20px;
+        line-height: 1.8;
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: left;
+      }
+
+      /* About Us Section */
       #about-us {
         background-color: #fff;
         color: #000;
-        padding-top: 60px;
+        padding: 100px 40px;
+        text-align: center;
       }
 
-      section h1 {
-        font-size: 48px;
+      #about-us h1 {
         font-family: "Eating Pasta", sans-serif;
+        font-size: 48px;
+        margin-bottom: 40px;
+      }
+
+      #about-us p {
+        font-size: 20px;
+        line-height: 1.8;
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: left;
+      }
+
+      #about-us .group-image {
         margin-bottom: 30px;
         text-align: center;
       }
 
-      section p {
-        font-size: 18px;
-        line-height: 1.6;
-        text-align: center;
-        max-width: 900px;
+      #about-us .group-image img {
+        max-width: 80%;
+        height: auto;
+        border-radius: 10px;
       }
     </style>
   </head>
@@ -215,6 +241,19 @@
       </div>
     </div>
 
+    <!-- Video Section -->
+    <div class="video-container">
+      <iframe
+        id="youtube-video"
+        src="https://www.youtube.com/embed/O5UadsRy_eY?mute=1&enablejsapi=1&rel=0&vq=hd1080&cc_load_policy=0"
+        allow="autoplay; encrypted-media"
+        allowfullscreen
+        playsinline
+        title="YouTube Video Background"
+      ></iframe>
+    </div>
+
+    <!-- Text Section -->
     <section id="homepage">
       <div class="quote-container">
         <p>
@@ -224,62 +263,46 @@
           Sustainable living has never been this convenient.
         </p>
       </div>
-
-      <div class="video-container">
-        <iframe
-          id="youtube-video"
-          src="https://www.youtube.com/embed/O5UadsRy_eY?mute=1&enablejsapi=1&rel=0&vq=hd1080&cc_load_policy=0"
-          allow="autoplay; encrypted-media"
-          allowfullscreen
-          playsinline
-          title="YouTube Video Background"
-        ></iframe>
-      </div>
     </section>
 
+    <!-- How it Works Section -->
     <section id="how-it-works">
-      <div class="how-it-works-steps">
-        <h1>HOW IT WORKS</h1>
-        <ol class="steps-list">
-          <li>
-            <strong>Download the Winkelwagen App</strong><br />
-            Get started by clicking <a href="#">this link</a> or searching for
-            "Winkelwagen" in your app store.
-          </li>
-          <li>
-            <strong>Create Your Account</strong><br />
-            Sign up and choose a membership plan that suits you: Basic,
-            Advanced, or Package-Free Fanatic.
-          </li>
-          <li>
-            <strong>Join the Community</strong><br />
-            Welcome to the Winkelwagen family! You're now part of the movement
-            for sustainable living.
-          </li>
-          <li>
-            <strong>Place Your Order</strong><br />
-            Browse and select the products you need, then set a delivery date
-            that works for you.
-          </li>
-          <li>
-            <strong>Pick Up Your Products</strong><br />
-            On delivery day, meet the van and fill your own containers—or
-            purchase one of our reusable Winkelwagen bags.
-          </li>
-          <li>
-            <strong>Enjoy Sustainability</strong><br />
-            Use and enjoy your package-free products, knowing you're making a
-            difference.
-          </li>
-        </ol>
-      </div>
-      <div class="how-it-works-images">
-        <img src="App.png" alt="App" />
-        <img src="Bag.png" alt="Bag" />
-        <img src="Winkelwagen.png" alt="Winkelwagen" />
-      </div>
+      <h1>HOW IT WORKS</h1>
+      <ol class="steps-list">
+        <li>
+          <strong>Download the Winkelwagen App</strong><br />
+          Get started by clicking <a href="#">this link</a> or searching for
+          "Winkelwagen" in your app store.
+        </li>
+        <li>
+          <strong>Create Your Account</strong><br />
+          Sign up and choose a membership plan that suits you: Basic, Advanced,
+          or Package-Free Fanatic.
+        </li>
+        <li>
+          <strong>Join the Community</strong><br />
+          Welcome to the Winkelwagen family! You're now part of the movement for
+          sustainable living.
+        </li>
+        <li>
+          <strong>Place Your Order</strong><br />
+          Browse and select the products you need, then set a delivery date that
+          works for you.
+        </li>
+        <li>
+          <strong>Pick Up Your Products</strong><br />
+          On delivery day, meet the van and fill your own containers—or purchase
+          one of our reusable Winkelwagen bags.
+        </li>
+        <li>
+          <strong>Enjoy Sustainability</strong><br />
+          Use and enjoy your package-free products, knowing you're making a
+          difference.
+        </li>
+      </ol>
     </section>
 
+    <!-- The Packaging Problem Section -->
     <section id="packaging-problem">
       <h1>The Packaging Problem</h1>
       <p>
@@ -298,6 +321,7 @@
       </p>
     </section>
 
+    <!-- Vision Section -->
     <section id="vision">
       <h1>Vision</h1>
       <p>
@@ -318,14 +342,13 @@
       </p>
     </section>
 
+    <!-- About Us Section -->
     <section id="about-us">
       <h1>About Us</h1>
+      <div class="group-image">
+        <img src="GROUP.png" alt="Group Picture of Team" />
+      </div>
       <p>
-        Meet our team!<br /><br />
-        <strong>Rembrandt:</strong> Brand management and marketing strategies<br />
-        <strong>Sophie:</strong> Graphic Designer and content creation<br />
-        <strong>Nills:</strong> Logistics and supply chain management<br />
-        <strong>Nathali:</strong> Business development manager<br /><br />
         We are four AMS Institute graduates driven by a shared passion for
         building a sustainable future for the Netherlands. Like many, we often
         relied on supermarkets for our daily needs, but we were shocked to see
