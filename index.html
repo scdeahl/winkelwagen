@@ -10,7 +10,7 @@
         src: url("Eating Pasta.otf") format("opentype");
       }
 
-      @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
+      @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
 
       * {
         margin: 0;
@@ -71,6 +71,7 @@
         height: 100vh;
         text-align: center;
         background-color: #fff;
+        position: relative;
       }
 
       #homepage .quote-container {
@@ -82,6 +83,31 @@
         line-height: 1.8;
         max-width: 900px;
         text-align: center;
+      }
+
+      #homepage .moving-images {
+        position: absolute;
+        bottom: 20px;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        overflow: hidden;
+      }
+
+      #homepage .moving-images img {
+        width: 100px;
+        height: auto;
+        animation: moveAcross 10s linear infinite;
+      }
+
+      @keyframes moveAcross {
+        0% {
+          transform: translateX(-100%);
+        }
+        100% {
+          transform: translateX(100%);
+        }
       }
 
       /* Video Section */
@@ -140,8 +166,7 @@
       }
 
       @keyframes moveUpDown {
-        0%,
-        100% {
+        0%, 100% {
           transform: translateY(0);
         }
         50% {
@@ -257,11 +282,16 @@
     <section id="homepage">
       <div class="quote-container">
         <p>
-          Discover a better way to shop for essentials like oats, pasta, and
-          detergent, completely packaging-free. Order just the amount you need,
-          and fill your own bags or containers right at your doorstep.
-          Sustainable living has never been this convenient.
+          Discover a better way to shop for essentials like oats, pasta, and detergent, completely packaging-free. Order just the amount you need, and fill your own bags or containers right at your doorstep. Sustainable living has never been this convenient.
         </p>
+      </div>
+      <div class="moving-images">
+        <img src="App.png" alt="App Icon" />
+        <img src="Winkelwagen.png" alt="Winkelwagen Icon" />
+        <img src="Bag.png" alt="Bag Icon" />
+        <img src="App.png" alt="App Icon" />
+        <img src="Winkelwagen.png" alt="Winkelwagen Icon" />
+        <img src="Bag.png" alt="Bag Icon" />
       </div>
     </section>
 
@@ -270,34 +300,28 @@
       <h1>HOW IT WORKS</h1>
       <ol class="steps-list">
         <li>
-          <strong>Download the Winkelwagen App</strong><br />
-          Get started by clicking <a href="#">this link</a> or searching for
-          "Winkelwagen" in your app store.
+          <strong>Download the Winkelwagen App</strong><br>
+          Get started by clicking <a href="#">this link</a> or searching for "Winkelwagen" in your app store.
         </li>
         <li>
-          <strong>Create Your Account</strong><br />
-          Sign up and choose a membership plan that suits you: Basic, Advanced,
-          or Package-Free Fanatic.
+          <strong>Create Your Account</strong><br>
+          Sign up and choose a membership plan that suits you: Basic, Advanced, or Package-Free Fanatic.
         </li>
         <li>
-          <strong>Join the Community</strong><br />
-          Welcome to the Winkelwagen family! You're now part of the movement for
-          sustainable living.
+          <strong>Join the Community</strong><br>
+          Welcome to the Winkelwagen family! You're now part of the movement for sustainable living.
         </li>
         <li>
-          <strong>Place Your Order</strong><br />
-          Browse and select the products you need, then set a delivery date that
-          works for you.
+          <strong>Place Your Order</strong><br>
+          Browse and select the products you need, then set a delivery date that works for you.
         </li>
         <li>
-          <strong>Pick Up Your Products</strong><br />
-          On delivery day, meet the van and fill your own containers—or purchase
-          one of our reusable Winkelwagen bags.
+          <strong>Pick Up Your Products</strong><br>
+          On delivery day, meet the van and fill your own containers—or purchase one of our reusable Winkelwagen bags.
         </li>
         <li>
-          <strong>Enjoy Sustainability</strong><br />
-          Use and enjoy your package-free products, knowing you're making a
-          difference.
+          <strong>Enjoy Sustainability</strong><br>
+          Use and enjoy your package-free products, knowing you're making a difference.
         </li>
       </ol>
     </section>
@@ -306,18 +330,8 @@
     <section id="packaging-problem">
       <h1>The Packaging Problem</h1>
       <p>
-        Plastic pollution is a global crisis, damaging ecosystems and harming
-        wildlife and human health. Single-use plastics like bags, bottles, and
-        packaging dominate this waste, breaking into microplastics that
-        infiltrate our oceans, soil, and food chain. Packaging alone accounts
-        for 36% of the 440 million tons of plastic produced annually.<br /><br />
-        In the Netherlands, only 7% of packaging is reused, with the rest piling
-        up in landfills. If current trends continue, the demand for packaging
-        will rise by 17% by 2050, adding to the staggering 82,353 football
-        fields of plastic waste generated each year. Urgent action is needed to
-        meet Dutch sustainability goals of eliminating fossil-fuel-based
-        packaging by 2050. Let's start building a future free from plastic waste
-        today.
+        Plastic pollution is a global crisis, damaging ecosystems and harming wildlife and human health. Single-use plastics like bags, bottles, and packaging dominate this waste, breaking into microplastics that infiltrate our oceans, soil, and food chain. Packaging alone accounts for 36% of the 440 million tons of plastic produced annually.<br><br>
+        In the Netherlands, only 7% of packaging is reused, with the rest piling up in landfills. If current trends continue, the demand for packaging will rise by 17% by 2050, adding to the staggering 82,353 football fields of plastic waste generated each year. Urgent action is needed to meet Dutch sustainability goals of eliminating fossil-fuel-based packaging by 2050. Let's start building a future free from plastic waste today.
       </p>
     </section>
 
@@ -325,20 +339,8 @@
     <section id="vision">
       <h1>Vision</h1>
       <p>
-        We envision a world where package-free shopping becomes the new
-        standard. Supermarkets have made consuming goods wrapped in plastic
-        incredibly convenient, but this convenience comes at a cost. Recycling
-        alone cannot solve the mounting problem of plastic waste, especially
-        with the projected increase in packaging use. The only sustainable path
-        forward is reducing our reliance on single-use plastics.<br /><br />
-        By making package-free shopping simple and accessible, we aim to inspire
-        individuals to adopt sustainable habits and embrace a future free from
-        plastic waste. But our vision doesn’t stop there, we’re on a mission to
-        drive systemic change. Through innovative projects and data-driven
-        insights, we aspire to partner with brands, supermarkets, and
-        policymakers to create a retail landscape that prioritizes
-        sustainability, starting in the Netherlands and setting an example for
-        the world.
+        We envision a world where package-free shopping becomes the new standard. Supermarkets have made consuming goods wrapped in plastic incredibly convenient, but this convenience comes at a cost. Recycling alone cannot solve the mounting problem of plastic waste, especially with the projected increase in packaging use. The only sustainable path forward is reducing our reliance on single-use plastics.<br><br>
+        By making package-free shopping simple and accessible, we aim to inspire individuals to adopt sustainable habits and embrace a future free from plastic waste. But our vision doesn’t stop there, we’re on a mission to drive systemic change. Through innovative projects and data-driven insights, we aspire to partner with brands, supermarkets, and policymakers to create a retail landscape that prioritizes sustainability, starting in the Netherlands and setting an example for the world.
       </p>
     </section>
 
@@ -349,21 +351,14 @@
         <img src="GROUP.png" alt="Group Picture of Team" />
       </div>
       <p>
-        We are four AMS Institute graduates driven by a shared passion for
-        building a sustainable future for the Netherlands. Like many, we often
-        relied on supermarkets for our daily needs, but we were shocked to see
-        just how much unnecessary packaging is used in the current system. This
-        realization hit home when we reflected on our busy lifestyles, where
-        visiting markets or package-free stores wasn’t always feasible.<br /><br />
-        Motivated by this challenge, we created Winkelwagen to make sustainable
-        living more convenient and accessible for everyone. We believe small
-        changes, when made collectively, can have a massive impact. By combining
-        innovation, convenience, and a strong community focus, we’re empowering
-        people to rethink their habits and join us in reducing packaging
-        waste.<br /><br />
-        Our goal is not just to reduce single-use plastics but to spark a
-        movement. Through our work, we hope to inspire others to embrace a
-        future where sustainable choices are the norm, not the exception.
+        Meet our team!<br><br>
+        <strong>Rembrandt Ajamlou:</strong> Brand management and marketing strategies<br>
+        <strong>Sophie Deahl:</strong> Graphic Designer and content creation<br>
+        <strong>Nils Janssen:</strong> Logistics and supply chain management<br>
+        <strong>Nathalie Waelbroeck:</strong> Business development manager<br><br>
+        We are four AMS Institute graduates driven by a shared passion for building a sustainable future for the Netherlands. Like many, we often relied on supermarkets for our daily needs, but we were shocked to see just how much unnecessary packaging is used in the current system. This realization hit home when we reflected on our busy lifestyles, where visiting markets or package-free stores wasn’t always feasible.<br><br>
+        Motivated by this challenge, we created Winkelwagen to make sustainable living more convenient and accessible for everyone. We believe small changes, when made collectively, can have a massive impact. By combining innovation, convenience, and a strong community focus, we’re empowering people to rethink their habits and join us in reducing packaging waste.<br><br>
+        Our goal is not just to reduce single-use plastics but to spark a movement. Through our work, we hope to inspire others to embrace a future where sustainable choices are the norm, not the exception.
       </p>
     </section>
   </body>
