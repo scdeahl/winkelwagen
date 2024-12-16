@@ -3,194 +3,228 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fullscreen Video Website</title>
+    <title>Winkelwagen Website</title>
     <style>
-      @font-face {
-        font-family: "Eating Pasta";
-        src: url("Eating Pasta.otf") format("opentype");
-      }
+            @font-face {
+              font-family: "Eating Pasta";
+              src: url("Eating Pasta.otf") format("opentype");
+            }
 
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
+            @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
 
-      body {
-        font-family: Calibri, sans-serif;
-        color: #000;
-        background-color: #fff;
-        overflow: hidden; /* Prevent scrollbars */
-      }
+            * {
+              margin: 0;
+              padding: 0;
+              box-sizing: border-box;
+            }
 
-      /* Video and Quote Layout */
-      .content-container {
-        display: flex;
-        flex-direction: row;
-        height: calc(
-          100vh - 100px
-        ); /* Adjust height to account for the banner and spacing */
-        width: 100vw;
-        margin-top: 30px; /* Space between banner and content */
-      }
+            body {
+              font-family: Calibri, sans-serif;
+              color: #000;
+              background-color: #fff;
+              overflow-y: auto; /* Allow scrolling */
+            }
 
-      .quote-container {
-        flex: 1;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: #fff;
-        color: #000;
-        padding: 20px;
-        font-family: Calibri, sans-serif; /* Simpler font */
-        text-align: center;
-      }
+            /* Banner Styling */
+            .banner {
+              position: fixed;
+              top: 0;
+              width: 100%;
+              background-color: #000;
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              padding: 10px 20px;
+              font-family: "Eating Pasta", sans-serif;
+              z-index: 20;
+              color: white;
+            }
 
-      .quote-container p {
-        font-size: 24px;
-        line-height: 1.6;
-        max-width: 600px;
-      }
+            .banner .logo img {
+              height: 50px;
+            }
 
-      .video-container {
-        flex: 2;
+            .banner .tabs {
+              display: flex;
+              justify-content: space-evenly;
+              width: 70%;
+            }
+
+            .banner .tabs a {
+              text-decoration: none;
+              color: #fff;
+              font-size: 24px;
+              font-weight: bold;
+              transition: color 0.3s;
+            }
+
+            .banner .tabs a:hover {
+              color: #f0a500;
+            }
+
+            /* Homepage Section Styling */
+            #homepage {
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              padding: 200px 20px 20px; /* Center the text and create space from the banner */
+              height: 120vh; /* Increase height for more focus on text */
+              text-align: center;
+            }
+
+            #homepage .quote-container {
+              padding: 20px;
+              font-family: 'Roboto', sans-serif;
+              font-weight: 100;
+            }
+
+            #homepage .quote-container p {
+              font-size: 32px; /* Larger font for emphasis */
+              line-height: 1.8;
+              max-width: 800px;
+            }
+
+            #homepage .video-container {
         position: relative;
+        width: 100%;
+        padding-top: 56.25%; /* 16:9 Aspect Ratio */
         overflow: hidden;
       }
 
-      .video-container iframe {
+      #homepage .video-container iframe {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        border: none;
       }
 
-      .video-container + .how-it-works {
-        text-align: center;
-        margin-top: 20px;
-        font-family: Calibri, sans-serif;
-        padding: 20px;
-      }
+            }
 
-      .how-it-works h1 {
-        font-family: "Eating Pasta", sans-serif;
-        font-size: 32px;
-        margin-bottom: 20px;
-      }
+            /* Section styling */
+            section {
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              padding: 40px 20px;
+              height: auto;
+            }
 
-      .how-it-works p {
-        font-size: 18px;
-        line-height: 1.8;
-      }
+            #how-it-works {
+              background-color: #fff;
+              color: #000;
+              padding-top: 60px;
+              display: flex;
+              flex-direction: row;
+              align-items: flex-start;
+              justify-content: space-between;
+            }
 
-      /* Play with Sound Button */
-      #play-sound-button {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background: rgba(0, 0, 0, 0.7);
-        color: white;
-        font-size: 18px;
-        padding: 10px 20px;
-        border: none;
-        cursor: pointer;
-        border-radius: 5px;
-        z-index: 10;
-      }
+            .how-it-works-steps {
+              flex: 2;
+              font-size: 18px;
+              line-height: 1.8;
+              text-align: left;
+              max-width: 600px;
+              margin: 0 20px;
+            }
 
-      /* Top banner */
-      .banner {
-        position: absolute;
-        top: 0;
-        width: 100%;
-        background-color: #000;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 10px 20px;
-        font-family: "Eating Pasta", sans-serif; /* Eating Pasta font applied here */
-        z-index: 20;
-      }
+            .how-it-works-steps h1 {
+              font-family: "Eating Pasta", sans-serif;
+              font-size: 32px;
+              margin-bottom: 20px;
+            }
 
-      .banner .logo img {
-        height: 50px;
-      }
+            .steps-list {
+              list-style-type: decimal;
+              margin-left: 20px;
+            }
 
-      .banner .tabs {
-        display: flex;
-        justify-content: space-evenly;
-        width: 70%;
-      }
+            .how-it-works-images {
+              flex: 1;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              gap: 20px;
+              position: relative;
+            }
 
-      .banner .tabs a {
-        text-decoration: none;
-        color: #fff;
-        font-size: 24px;
-        font-weight: bold;
-        font-family: "Eating Pasta", sans-serif; /* Explicitly ensure Eating Pasta font */
-        transition: color 0.3s;
-      }
+            .how-it-works-images img {
+              max-width: 200px;
+              height: auto;
+              position: absolute;
+              opacity: 0;
+              animation: fadeInOut 6s infinite;
+            }
 
-      .banner .tabs a:hover {
-        color: #f0a500;
-      }
+            .how-it-works-images img:nth-child(1) {
+              animation-delay: 0s;
+            }
 
-      /* Section styling */
-      section {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        padding: 20px;
-        background-color: #fff;
-        color: #000;
-      }
+            .how-it-works-images img:nth-child(2) {
+              animation-delay: 2s;
+            }
 
-      section h1 {
-        font-size: 48px;
-        font-weight: bold;
-        margin-bottom: 20px;
-        text-align: center;
-      }
+            .how-it-works-images img:nth-child(3) {
+              animation-delay: 4s;
+            }
 
-      section p,
-      section ul {
-        font-size: 18px;
-        line-height: 1.6;
-        text-align: center;
-        max-width: 800px;
-      }
+            @keyframes fadeInOut {
+              0%, 100% { opacity: 0; }
+              20%, 80% { opacity: 1; }
+            }
 
-      section ul {
-        list-style-type: none;
-        padding: 0;
-      }
+            #packaging-problem {
+              background-color: #000;
+              color: #fff;
+              padding-top: 60px;
+            }
 
-      section ul li {
-        margin: 10px 0;
-      }
+            #vision {
+              background-color: #1d4943;
+              color: #fff;
+              padding-top: 60px;
+            }
+
+            #about-us {
+              background-color: #fff;
+              color: #000;
+              padding-top: 60px;
+            }
+
+            section h1 {
+              font-size: 48px;
+              font-family: "Eating Pasta", sans-serif;
+              margin-bottom: 20px;
+              text-align: center;
+            }
+
+            section p {
+              font-size: 18px;
+              line-height: 1.6;
+              text-align: center;
+              max-width: 800px;
+            }
     </style>
   </head>
   <body>
-    <!-- Top Banner -->
     <div class="banner">
       <div class="logo">
         <img src="logo.png" alt="Logo" />
       </div>
       <div class="tabs">
-        <a href="#join">Join</a>
+        <a href="#homepage">Home</a>
+        <a href="#how-it-works">How it works</a>
+        <a href="#packaging-problem">The Packaging Problem</a>
+        <a href="#vision">Vision</a>
         <a href="#about-us">About Us</a>
-        <a href="#our-story">Our Story</a>
       </div>
     </div>
 
-    <!-- Content Container -->
-    <div class="content-container">
-      <!-- Quote Section -->
+    <section id="homepage">
       <div class="quote-container">
         <p>
           Discover a better way to shop for essentials like oats, pasta, and
@@ -200,7 +234,6 @@
         </p>
       </div>
 
-      <!-- YouTube Video Section -->
       <div class="video-container">
         <iframe
           id="youtube-video"
@@ -210,86 +243,114 @@
           playsinline
           title="YouTube Video Background"
         ></iframe>
-        <button id="play-sound-button">Play with Sound</button>
       </div>
-    </div>
+    </section>
 
-    <!-- How it works Section -->
-    <div class="how-it-works">
-      <h1>How it works</h1>
+    <section id="how-it-works">
+      <div class="how-it-works-steps">
+        <h1>HOW IT WORKS</h1>
+        <ol class="steps-list">
+          <li>
+            <strong>Download the Winkelwagen App</strong><br />
+            Get started by clicking <a href="#">this link</a> or searching for
+            "Winkelwagen" in your app store.
+          </li>
+          <li>
+            <strong>Create Your Account</strong><br />
+            Sign up and choose a membership plan that suits you: Basic,
+            Advanced, or Package-Free Fanatic.
+          </li>
+          <li>
+            <strong>Join the Community</strong><br />
+            Welcome to the Winkelwagen family! You're now part of the movement
+            for sustainable living.
+          </li>
+          <li>
+            <strong>Place Your Order</strong><br />
+            Browse and select the products you need, then set a delivery date
+            that works for you.
+          </li>
+          <li>
+            <strong>Pick Up Your Products</strong><br />
+            On delivery day, meet the van and fill your own containers—or
+            purchase one of our reusable Winkelwagen bags.
+          </li>
+          <li>
+            <strong>Enjoy Sustainability</strong><br />
+            Use and enjoy your package-free products, knowing you're making a
+            difference.
+          </li>
+        </ol>
+      </div>
+      <div class="how-it-works-images">
+        <img src="App.png" alt="App" />
+        <img src="Bag.png" alt="Bag" />
+        <img src="Winkelwagen.png" alt="Winkelwagen" />
+      </div>
+    </section>
+
+    <section id="packaging-problem">
+      <h1>The Packaging Problem</h1>
       <p>
-        <strong>Download the Winkelwagen App</strong><br />
-        Get started by clicking <a href="#">this link</a> or searching for
-        "Winkelwagen" in your app store.<br /><br />
-        <strong>Create Your Account</strong><br />
-        Sign up and choose a membership plan that suits you: Basic, Advanced, or
-        Package-Free Fanatic.<br /><br />
-        <strong>Join the Community</strong><br />
-        Welcome to the Winkelwagen family! You're now part of the movement for
-        sustainable living.<br /><br />
-        <strong>Place Your Order</strong><br />
-        Browse and select the products you need, then set a delivery date that
-        works for you.<br /><br />
-        <strong>Pick Up Your Products</strong><br />
-        On delivery day, meet the van and fill your own containers—or purchase
-        one of our reusable Winkelwagen bags.<br /><br />
-        <strong>Enjoy Sustainability</strong><br />
-        Use and enjoy your package-free products, knowing you're making a
-        difference.
+        Plastic pollution is a global crisis, damaging ecosystems and harming
+        wildlife and human health. Single-use plastics like bags, bottles, and
+        packaging dominate this waste, breaking into microplastics that
+        infiltrate our oceans, soil, and food chain. Packaging alone accounts
+        for 36% of the 440 million tons of plastic produced annually.<br /><br />
+        In the Netherlands, only 7% of packaging is reused, with the rest piling
+        up in landfills. If current trends continue, the demand for packaging
+        will rise by 17% by 2050, adding to the staggering 82,353 football
+        fields of plastic waste generated each year. Urgent action is needed to
+        meet Dutch sustainability goals of eliminating fossil-fuel-based
+        packaging by 2050. Let's start building a future free from plastic waste
+        today.
       </p>
-    </div>
+    </section>
 
-    <!-- Sections -->
-    <section id="join">
-      <h1>Join</h1>
-      <p>Here are options to join us:</p>
-      <ul>
-        <li>Sign up for our newsletter</li>
-        <li>Follow us on social media</li>
-        <li>Become a member for exclusive benefits</li>
-      </ul>
+    <section id="vision">
+      <h1>Vision</h1>
+      <p>
+        We envision a world where package-free shopping becomes the new
+        standard. Supermarkets have made consuming goods wrapped in plastic
+        incredibly convenient, but this convenience comes at a cost. Recycling
+        alone cannot solve the mounting problem of plastic waste, especially
+        with the projected increase in packaging use. The only sustainable path
+        forward is reducing our reliance on single-use plastics.<br /><br />
+        By making package-free shopping simple and accessible, we aim to inspire
+        individuals to adopt sustainable habits and embrace a future free from
+        plastic waste. But our vision doesn’t stop there, we’re on a mission to
+        drive systemic change. Through innovative projects and data-driven
+        insights, we aspire to partner with brands, supermarkets, and
+        policymakers to create a retail landscape that prioritizes
+        sustainability, starting in the Netherlands and setting an example for
+        the world.
+      </p>
     </section>
 
     <section id="about-us">
       <h1>About Us</h1>
-      <p>Meet the team: Nils, Rembrandt, Sophie, and Nathalie.</p>
-    </section>
-
-    <section id="our-story">
-      <h1>Our Story</h1>
       <p>
-        This is our story. We started with a simple idea and grew into a
-        community-driven initiative. Join us as we continue to grow and make a
-        difference together!
+        Meet our team!<br /><br />
+        <strong>Rembrandt:</strong> Brand management and marketing strategies<br />
+        <strong>Sophie:</strong> Graphic Designer and content creation<br />
+        <strong>Nills:</strong> Logistics and supply chain management<br />
+        <strong>Nathali:</strong> Business development manager<br /><br />
+        We are four AMS Institute graduates driven by a shared passion for
+        building a sustainable future for the Netherlands. Like many, we often
+        relied on supermarkets for our daily needs, but we were shocked to see
+        just how much unnecessary packaging is used in the current system. This
+        realization hit home when we reflected on our busy lifestyles, where
+        visiting markets or package-free stores wasn’t always feasible.<br /><br />
+        Motivated by this challenge, we created Winkelwagen to make sustainable
+        living more convenient and accessible for everyone. We believe small
+        changes, when made collectively, can have a massive impact. By combining
+        innovation, convenience, and a strong community focus, we’re empowering
+        people to rethink their habits and join us in reducing packaging
+        waste.<br /><br />
+        Our goal is not just to reduce single-use plastics but to spark a
+        movement. Through our work, we hope to inspire others to embrace a
+        future where sustainable choices are the norm, not the exception.
       </p>
     </section>
-
-    <script>
-      const playButton = document.getElementById("play-sound-button");
-      const iframe = document.getElementById("youtube-video");
-
-      playButton.addEventListener("click", () => {
-        // Enable sound by interacting with the YouTube API
-        iframe.contentWindow.postMessage(
-          JSON.stringify({
-            event: "command",
-            func: "unMute",
-            args: [],
-          }),
-          "*"
-        );
-
-        iframe.contentWindow.postMessage(
-          JSON.stringify({
-            event: "command",
-            func: "playVideo",
-            args: [],
-          }),
-          "*"
-        );
-
-        playButton.style.display = "none"; // Hide the button after clicking
-      });
-    </script>
   </body>
 </html>
