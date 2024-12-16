@@ -5,90 +5,90 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Winkelwagen Website</title>
     <style>
-            @font-face {
-              font-family: "Eating Pasta";
-              src: url("Eating Pasta.otf") format("opentype");
-            }
+      @font-face {
+        font-family: "Eating Pasta";
+        src: url("Eating Pasta.otf") format("opentype");
+      }
 
-            @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
 
-            * {
-              margin: 0;
-              padding: 0;
-              box-sizing: border-box;
-            }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-            body {
-              font-family: Calibri, sans-serif;
-              color: #000;
-              background-color: #fff;
-              overflow-y: auto; /* Allow scrolling */
-            }
+      body {
+        font-family: Calibri, sans-serif;
+        color: #000;
+        background-color: #fff;
+        overflow-y: auto; /* Allow scrolling */
+      }
 
-            /* Banner Styling */
-            .banner {
-              position: fixed;
-              top: 0;
-              width: 100%;
-              background-color: #000;
-              display: flex;
-              align-items: center;
-              justify-content: space-between;
-              padding: 10px 20px;
-              font-family: "Eating Pasta", sans-serif;
-              z-index: 20;
-              color: white;
-            }
+      /* Banner Styling */
+      .banner {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: #000;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 20px;
+        font-family: "Eating Pasta", sans-serif;
+        z-index: 20;
+        color: white;
+      }
 
-            .banner .logo img {
-              height: 50px;
-            }
+      .banner .logo img {
+        height: 50px;
+      }
 
-            .banner .tabs {
-              display: flex;
-              justify-content: space-evenly;
-              width: 70%;
-            }
+      .banner .tabs {
+        display: flex;
+        justify-content: space-evenly;
+        width: 70%;
+      }
 
-            .banner .tabs a {
-              text-decoration: none;
-              color: #fff;
-              font-size: 24px;
-              font-weight: bold;
-              transition: color 0.3s;
-            }
+      .banner .tabs a {
+        text-decoration: none;
+        color: #fff;
+        font-size: 24px;
+        font-weight: bold;
+        transition: color 0.3s;
+      }
 
-            .banner .tabs a:hover {
-              color: #f0a500;
-            }
+      .banner .tabs a:hover {
+        color: #f0a500;
+      }
 
-            /* Homepage Section Styling */
-            #homepage {
-              display: flex;
-              flex-direction: column;
-              justify-content: center;
-              align-items: center;
-              padding: 200px 20px 20px; /* Center the text and create space from the banner */
-              height: 120vh; /* Increase height for more focus on text */
-              text-align: center;
-            }
+      /* Homepage Section Styling */
+      #homepage {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 250px 40px 40px; /* Center the text and create more space from the banner */
+        height: 120vh; /* Increase height for more focus on text */
+        text-align: center;
+      }
 
-            #homepage .quote-container {
-              padding: 20px;
-              font-family: 'Roboto', sans-serif;
-              font-weight: 100;
-            }
+      #homepage .quote-container {
+        padding: 20px;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 100;
+      }
 
-            #homepage .quote-container p {
-              font-size: 32px; /* Larger font for emphasis */
-              line-height: 1.8;
-              max-width: 800px;
-            }
+      #homepage .quote-container p {
+        font-size: 32px; /* Larger font for emphasis */
+        line-height: 1.8;
+        max-width: 800px;
+      }
 
-            #homepage .video-container {
+      #homepage .video-container {
         position: relative;
         width: 100%;
-        padding-top: 56.25%; /* 16:9 Aspect Ratio */
+        padding-top: 56.25%; /* Maintain 16:9 aspect ratio */
         overflow: hidden;
       }
 
@@ -100,114 +100,111 @@
         height: 100%;
       }
 
-            }
+      /* Section styling */
+      section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 80px 40px; /* Add space from corners */
+        height: auto;
+      }
 
-            /* Section styling */
-            section {
-              display: flex;
-              flex-direction: column;
-              justify-content: center;
-              align-items: center;
-              padding: 40px 20px;
-              height: auto;
-            }
+      #how-it-works {
+        background-color: #fff;
+        color: #000;
+        padding-top: 60px;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+      }
 
-            #how-it-works {
-              background-color: #fff;
-              color: #000;
-              padding-top: 60px;
-              display: flex;
-              flex-direction: row;
-              align-items: flex-start;
-              justify-content: space-between;
-            }
+      .how-it-works-steps {
+        flex: 2;
+        font-size: 18px;
+        line-height: 1.8;
+        text-align: left;
+        max-width: 600px;
+        margin: 0 20px;
+      }
 
-            .how-it-works-steps {
-              flex: 2;
-              font-size: 18px;
-              line-height: 1.8;
-              text-align: left;
-              max-width: 600px;
-              margin: 0 20px;
-            }
+      .how-it-works-steps h1 {
+        font-family: "Eating Pasta", sans-serif;
+        font-size: 32px;
+        margin-bottom: 20px;
+      }
 
-            .how-it-works-steps h1 {
-              font-family: "Eating Pasta", sans-serif;
-              font-size: 32px;
-              margin-bottom: 20px;
-            }
+      .steps-list {
+        list-style-type: decimal;
+        margin-left: 20px;
+      }
 
-            .steps-list {
-              list-style-type: decimal;
-              margin-left: 20px;
-            }
+      .how-it-works-images {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 40px; /* Larger gap between images */
+        margin-top: 40px; /* Align with the center of the text */
+      }
 
-            .how-it-works-images {
-              flex: 1;
-              display: flex;
-              flex-direction: column;
-              align-items: center;
-              justify-content: center;
-              gap: 20px;
-              position: relative;
-            }
+      .how-it-works-images img {
+        max-width: 400px; /* Make the images larger */
+        height: auto;
+        opacity: 0;
+        animation: fadeInOut 6s infinite;
+      }
 
-            .how-it-works-images img {
-              max-width: 200px;
-              height: auto;
-              position: absolute;
-              opacity: 0;
-              animation: fadeInOut 6s infinite;
-            }
+      .how-it-works-images img:nth-child(1) {
+        animation-delay: 0s;
+      }
 
-            .how-it-works-images img:nth-child(1) {
-              animation-delay: 0s;
-            }
+      .how-it-works-images img:nth-child(2) {
+        animation-delay: 2s;
+      }
 
-            .how-it-works-images img:nth-child(2) {
-              animation-delay: 2s;
-            }
+      .how-it-works-images img:nth-child(3) {
+        animation-delay: 4s;
+      }
 
-            .how-it-works-images img:nth-child(3) {
-              animation-delay: 4s;
-            }
+      @keyframes fadeInOut {
+        0%, 100% { opacity: 0; }
+        20%, 80% { opacity: 1; }
+      }
 
-            @keyframes fadeInOut {
-              0%, 100% { opacity: 0; }
-              20%, 80% { opacity: 1; }
-            }
+      #packaging-problem {
+        background-color: #000;
+        color: #fff;
+        padding-top: 60px;
+      }
 
-            #packaging-problem {
-              background-color: #000;
-              color: #fff;
-              padding-top: 60px;
-            }
+      #vision {
+        background-color: #1d4943;
+        color: #fff;
+        padding-top: 60px;
+      }
 
-            #vision {
-              background-color: #1d4943;
-              color: #fff;
-              padding-top: 60px;
-            }
+      #about-us {
+        background-color: #fff;
+        color: #000;
+        padding-top: 60px;
+      }
 
-            #about-us {
-              background-color: #fff;
-              color: #000;
-              padding-top: 60px;
-            }
+      section h1 {
+        font-size: 48px;
+        font-family: "Eating Pasta", sans-serif;
+        margin-bottom: 20px;
+        text-align: center;
+      }
 
-            section h1 {
-              font-size: 48px;
-              font-family: "Eating Pasta", sans-serif;
-              margin-bottom: 20px;
-              text-align: center;
-            }
-
-            section p {
-              font-size: 18px;
-              line-height: 1.6;
-              text-align: center;
-              max-width: 800px;
-            }
+      section p {
+        font-size: 18px;
+        line-height: 1.6;
+        text-align: center;
+        max-width: 800px;
+      }
     </style>
   </head>
   <body>
@@ -251,105 +248,65 @@
         <h1>HOW IT WORKS</h1>
         <ol class="steps-list">
           <li>
-            <strong>Download the Winkelwagen App</strong><br />
-            Get started by clicking <a href="#">this link</a> or searching for
-            "Winkelwagen" in your app store.
+            <strong>Download the Winkelwagen App</strong><br>
+            Get started by clicking <a href="#">this link</a> or searching for "Winkelwagen" in your app store.
           </li>
           <li>
-            <strong>Create Your Account</strong><br />
-            Sign up and choose a membership plan that suits you: Basic,
-            Advanced, or Package-Free Fanatic.
+            <strong>Create Your Account</strong><br>
+            Sign up and choose a membership plan that suits you: Basic, Advanced, or Package-Free Fanatic.
           </li>
           <li>
-            <strong>Join the Community</strong><br />
-            Welcome to the Winkelwagen family! You're now part of the movement
-            for sustainable living.
+            <strong>Join the Community</strong><br>
+            Welcome to the Winkelwagen family! You're now part of the movement for sustainable living.
           </li>
           <li>
-            <strong>Place Your Order</strong><br />
-            Browse and select the products you need, then set a delivery date
-            that works for you.
+            <strong>Place Your Order</strong><br>
+            Browse and select the products you need, then set a delivery date that works for you.
           </li>
           <li>
-            <strong>Pick Up Your Products</strong><br />
-            On delivery day, meet the van and fill your own containers—or
-            purchase one of our reusable Winkelwagen bags.
+            <strong>Pick Up Your Products</strong><br>
+            On delivery day, meet the van and fill your own containers—or purchase one of our reusable Winkelwagen bags.
           </li>
           <li>
-            <strong>Enjoy Sustainability</strong><br />
-            Use and enjoy your package-free products, knowing you're making a
-            difference.
+            <strong>Enjoy Sustainability</strong><br>
+            Use and enjoy your package-free products, knowing you're making a difference.
           </li>
         </ol>
       </div>
       <div class="how-it-works-images">
-        <img src="App.png" alt="App" />
-        <img src="Bag.png" alt="Bag" />
-        <img src="Winkelwagen.png" alt="Winkelwagen" />
+        <img src="App.png" alt="App">
+        <img src="Bag.png" alt="Bag">
+        <img src="Winkelwagen.png" alt="Winkelwagen">
       </div>
     </section>
 
     <section id="packaging-problem">
       <h1>The Packaging Problem</h1>
       <p>
-        Plastic pollution is a global crisis, damaging ecosystems and harming
-        wildlife and human health. Single-use plastics like bags, bottles, and
-        packaging dominate this waste, breaking into microplastics that
-        infiltrate our oceans, soil, and food chain. Packaging alone accounts
-        for 36% of the 440 million tons of plastic produced annually.<br /><br />
-        In the Netherlands, only 7% of packaging is reused, with the rest piling
-        up in landfills. If current trends continue, the demand for packaging
-        will rise by 17% by 2050, adding to the staggering 82,353 football
-        fields of plastic waste generated each year. Urgent action is needed to
-        meet Dutch sustainability goals of eliminating fossil-fuel-based
-        packaging by 2050. Let's start building a future free from plastic waste
-        today.
+        Plastic pollution is a global crisis, damaging ecosystems and harming wildlife and human health. Single-use plastics like bags, bottles, and packaging dominate this waste, breaking into microplastics that infiltrate our oceans, soil, and food chain. Packaging alone accounts for 36% of the 440 million tons of plastic produced annually.<br><br>
+        In the Netherlands, only 7% of packaging is reused, with the rest piling up in landfills. If current trends continue, the demand for packaging will rise by 17% by 2050, adding to the staggering 82,353 football fields of plastic waste generated each year. Urgent action is needed to meet Dutch sustainability goals of eliminating fossil-fuel-based packaging by 2050. Let's start building a future free from plastic waste today.
       </p>
     </section>
 
     <section id="vision">
       <h1>Vision</h1>
       <p>
-        We envision a world where package-free shopping becomes the new
-        standard. Supermarkets have made consuming goods wrapped in plastic
-        incredibly convenient, but this convenience comes at a cost. Recycling
-        alone cannot solve the mounting problem of plastic waste, especially
-        with the projected increase in packaging use. The only sustainable path
-        forward is reducing our reliance on single-use plastics.<br /><br />
-        By making package-free shopping simple and accessible, we aim to inspire
-        individuals to adopt sustainable habits and embrace a future free from
-        plastic waste. But our vision doesn’t stop there, we’re on a mission to
-        drive systemic change. Through innovative projects and data-driven
-        insights, we aspire to partner with brands, supermarkets, and
-        policymakers to create a retail landscape that prioritizes
-        sustainability, starting in the Netherlands and setting an example for
-        the world.
+        We envision a world where package-free shopping becomes the new standard. Supermarkets have made consuming goods wrapped in plastic incredibly convenient, but this convenience comes at a cost. Recycling alone cannot solve the mounting problem of plastic waste, especially with the projected increase in packaging use. The only sustainable path forward is reducing our reliance on single-use plastics.<br><br>
+        By making package-free shopping simple and accessible, we aim to inspire individuals to adopt sustainable habits and embrace a future free from plastic waste. But our vision doesn’t stop there, we’re on a mission to drive systemic change. Through innovative projects and data-driven insights, we aspire to partner with brands, supermarkets, and policymakers to create a retail landscape that prioritizes sustainability, starting in the Netherlands and setting an example for the world.
       </p>
     </section>
 
     <section id="about-us">
       <h1>About Us</h1>
       <p>
-        Meet our team!<br /><br />
-        <strong>Rembrandt:</strong> Brand management and marketing strategies<br />
-        <strong>Sophie:</strong> Graphic Designer and content creation<br />
-        <strong>Nills:</strong> Logistics and supply chain management<br />
-        <strong>Nathali:</strong> Business development manager<br /><br />
-        We are four AMS Institute graduates driven by a shared passion for
-        building a sustainable future for the Netherlands. Like many, we often
-        relied on supermarkets for our daily needs, but we were shocked to see
-        just how much unnecessary packaging is used in the current system. This
-        realization hit home when we reflected on our busy lifestyles, where
-        visiting markets or package-free stores wasn’t always feasible.<br /><br />
-        Motivated by this challenge, we created Winkelwagen to make sustainable
-        living more convenient and accessible for everyone. We believe small
-        changes, when made collectively, can have a massive impact. By combining
-        innovation, convenience, and a strong community focus, we’re empowering
-        people to rethink their habits and join us in reducing packaging
-        waste.<br /><br />
-        Our goal is not just to reduce single-use plastics but to spark a
-        movement. Through our work, we hope to inspire others to embrace a
-        future where sustainable choices are the norm, not the exception.
+        Meet our team!<br><br>
+        <strong>Rembrandt:</strong> Brand management and marketing strategies<br>
+        <strong>Sophie:</strong> Graphic Designer and content creation<br>
+        <strong>Nills:</strong> Logistics and supply chain management<br>
+        <strong>Nathali:</strong> Business development manager<br><br>
+        We are four AMS Institute graduates driven by a shared passion for building a sustainable future for the Netherlands. Like many, we often relied on supermarkets for our daily needs, but we were shocked to see just how much unnecessary packaging is used in the current system. This realization hit home when we reflected on our busy lifestyles, where visiting markets or package-free stores wasn’t always feasible.<br><br>
+        Motivated by this challenge, we created Winkelwagen to make sustainable living more convenient and accessible for everyone. We believe small changes, when made collectively, can have a massive impact. By combining innovation, convenience, and a strong community focus, we’re empowering people to rethink their habits and join us in reducing packaging waste.<br><br>
+        Our goal is not just to reduce single-use plastics but to spark a movement. Through our work, we hope to inspire others to embrace a future where sustainable choices are the norm, not the exception.
       </p>
     </section>
   </body>
